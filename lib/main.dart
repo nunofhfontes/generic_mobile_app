@@ -19,7 +19,7 @@ class GenericApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Image.asset(
-            "assets/images/github_logo.png",
+            "assets/images/github_transparent_logoicon.png",
             fit: BoxFit.contain,
             height: 72,
           ),
