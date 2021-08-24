@@ -26,10 +26,12 @@ class GenericApp extends StatelessWidget {
             elevation: 0,
           ),
           body: new Container(
-            // color: Color(0xff258DED),
             margin: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
             child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 new Container(
                   child: TextField(
