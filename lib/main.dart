@@ -42,12 +42,51 @@ class GenericApp extends StatelessWidget {
                   ),
                 ),
                 new Container(
+                  margin: EdgeInsets.symmetric(vertical: 8.0),
                   child: TextField(
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Password'
                     ),
                   ),
+                ),
+                FlatButton(
+                  onPressed: () => {},
+                  color: Colors.orange,
+                  padding: EdgeInsets.all(10.0),
+                  child: Column( // Replace with a Row for horizontal icon + text
+                    children: <Widget>[
+                      Icon(Icons.add),
+                      Text("Add")
+                    ],
+                  ),
+                ),
+                new Container(
+                    margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                    child: Text(
+                      'Don\'t have an account?',
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(color: Colors.grey),
+                    )
+                ),
+                new Container(
+                    margin: EdgeInsets.symmetric(vertical: 10.0),
+                    child: Text(
+                      'SIGN UP NOW',
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    )
+                ),
+                new Container(
+                  margin: EdgeInsets.symmetric(vertical: 20.0),
+                  child: Text(
+                    'Terms & Conditions',
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(color: Colors.grey),
+                  )
                 ),
               ],
             ),
