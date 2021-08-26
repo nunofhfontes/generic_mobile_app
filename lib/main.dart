@@ -50,12 +50,21 @@ class GenericApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10.0),
+                  child: ElevatedButton(
+                    // style: ButtonStyle(
+                    //   backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                    // ),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.green,
+                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                        textStyle: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold)),
+                    onPressed: () {},
+                    child: const Text('SIGN IN'),
                   ),
-                  onPressed: () {},
-                  child: const Text('SIGN IN'),
                 ),
                 new Container(
                     margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
