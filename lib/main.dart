@@ -50,16 +50,12 @@ class GenericApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                FlatButton(
-                  onPressed: () => {},
-                  color: Colors.orange,
-                  padding: EdgeInsets.all(10.0),
-                  child: Column( // Replace with a Row for horizontal icon + text
-                    children: <Widget>[
-                      Icon(Icons.add),
-                      Text("Add")
-                    ],
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
                   ),
+                  onPressed: () {},
+                  child: const Text('SIGN IN'),
                 ),
                 new Container(
                     margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
@@ -76,7 +72,9 @@ class GenericApp extends StatelessWidget {
                       'SIGN UP NOW',
                       textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF9AC433)),
                     )
                 ),
                 new Container(
