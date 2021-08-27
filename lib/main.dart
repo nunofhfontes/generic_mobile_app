@@ -25,8 +25,28 @@ class GenericApp extends StatelessWidget {
             toolbarHeight: 88,
             elevation: 0,
           ),
+          drawer: Drawer(
+            child: ListView(
+              children: [
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF9AC433)
+                  ),
+                    child: Text('Definitions'),
+                ),
+                ListTile(
+                  title: Text('toggle appBar'),
+                  onTap: () { },
+                ),
+                ListTile(
+                  title: Text('toggle Theme'),
+                  onTap: () { },
+                ),
+              ],
+            ),
+          ),
           body: new Container(
-            margin: const EdgeInsets.all(16.0),
+            margin: const EdgeInsets.all(20.0),
             alignment: Alignment.center,
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,9 +55,20 @@ class GenericApp extends StatelessWidget {
               children: <Widget>[
                 new Container(
                   child: TextField(
+                    // decoration: InputDecoration(
+                    //     border: OutlineInputBorder(),
+                    //     hintText: 'User Name'
+                    // ),
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'User Name'
+                        labelText: 'User Name',
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(width: 3, color: Colors.blue),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(width: 3, color: Colors.red),
+                          borderRadius: BorderRadius.circular(15),
+                        )
                     ),
                   ),
                 ),
@@ -58,9 +89,9 @@ class GenericApp extends StatelessWidget {
                     // ),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.green,
-                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                         textStyle: TextStyle(
-                            fontSize: 30,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold)),
                     onPressed: () {},
                     child: const Text('SIGN IN'),
