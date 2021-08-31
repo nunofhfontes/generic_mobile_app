@@ -55,30 +55,51 @@ class GenericApp extends StatelessWidget {
               children: <Widget>[
                 new Container(
                   child: TextField(
-                    // decoration: InputDecoration(
-                    //     border: OutlineInputBorder(),
-                    //     hintText: 'User Name'
-                    // ),
                     decoration: InputDecoration(
                         labelText: 'User Name',
+                        labelStyle: TextStyle(color: Color(0xFF8091A5)),
+                        prefixIcon: Icon(
+                          Icons.perm_identity_outlined,
+                          color: Color(0xFF8091A5),
+                        ),
+                        filled: true,
+                        fillColor: Color(0xFFCDD5DD),
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 3, color: Colors.blue),
-                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(width: 1, color: Color(0xFFCDD5DD)),
+                          borderRadius: BorderRadius.circular(4),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 3, color: Colors.red),
-                          borderRadius: BorderRadius.circular(15),
-                        )
+                          borderSide: BorderSide(width: 2, color: Colors.blue),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
                     ),
+                    // keyboardType: TextInputType.emailAddress,
                   ),
                 ),
                 new Container(
                   margin: EdgeInsets.symmetric(vertical: 8.0),
                   child: TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Password'
+                        labelText: 'Password',
+                        labelStyle: TextStyle(color: Color(0xFF8091A5)),
+                        prefixIcon: Icon(
+                          Icons.lock_outlined,
+                          color: Color(0xFF8091A5),
+                        ),
+                        filled: true,
+                        fillColor: Color(0xFFCDD5DD),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(width: 1, color: Color(0xFFCDD5DD)),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(width: 2, color: Colors.blue),
+                          borderRadius: BorderRadius.circular(4),
+                        )
                     ),
+
                   ),
                 ),
                 Container(
