@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import 'package:generic_app/widgets/PasswordInput.dart';
+
 void main() {
   runApp(GenericApp());
 }
@@ -77,31 +79,7 @@ class GenericApp extends StatelessWidget {
                     // keyboardType: TextInputType.emailAddress,
                   ),
                 ),
-                new Container(
-                  margin: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        labelText: 'Password',
-                        labelStyle: TextStyle(color: Color(0xFF8091A5)),
-                        prefixIcon: Icon(
-                          Icons.lock_outlined,
-                          color: Color(0xFF8091A5),
-                        ),
-                        filled: true,
-                        fillColor: Color(0xFFCDD5DD),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 1, color: Color(0xFFCDD5DD)),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 2, color: Colors.blue),
-                          borderRadius: BorderRadius.circular(4),
-                        )
-                    ),
-
-                  ),
-                ),
+                PasswordInput(),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10.0),
                   child: ElevatedButton(
@@ -155,3 +133,5 @@ class GenericApp extends StatelessWidget {
     );
   }
 }
+
+
