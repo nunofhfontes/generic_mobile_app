@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:generic_app/widgets/HomePageDrawer.dart';
 
 import 'package:generic_app/widgets/PasswordInput.dart';
+import 'package:generic_app/widgets/UserNameInput.dart';
 
 void main() {
   runApp(GenericApp());
@@ -27,24 +29,7 @@ class GenericApp extends StatelessWidget {
             toolbarHeight: 88,
             elevation: 0,
           ),
-          drawer: Drawer(
-            child: ListView(
-              children: [
-                DrawerHeader(
-                  decoration: BoxDecoration(color: Color(0xFF9AC433)),
-                  child: Text('Definitions'),
-                ),
-                ListTile(
-                  title: Text('toggle appBar'),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text('toggle Theme'),
-                  onTap: () {},
-                ),
-              ],
-            ),
-          ),
+          drawer: HomePageDrawer(),
           body: new Container(
             margin: const EdgeInsets.all(20.0),
             alignment: Alignment.center,
@@ -54,31 +39,7 @@ class GenericApp extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  new Container(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'User Name',
-                        labelStyle: TextStyle(color: Color(0xFF8091A5)),
-                        prefixIcon: Icon(
-                          Icons.perm_identity_outlined,
-                          color: Color(0xFF8091A5),
-                        ),
-                        filled: true,
-                        fillColor: Color(0xFFCDD5DD),
-                        floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(width: 1, color: Color(0xFFCDD5DD)),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 2, color: Colors.blue),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                      // keyboardType: TextInputType.emailAddress,
-                    ),
-                  ),
+                  UserNameInput(),
                   PasswordInput(),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
@@ -131,3 +92,7 @@ class GenericApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
