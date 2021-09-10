@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:generic_app/screens/HomePageScreen.dart';
+import 'package:generic_app/widgets/CustomizableAppBar.dart';
 import 'package:generic_app/widgets/HomePageDrawer.dart';
 
 
 void main() {
   runApp(GenericApp());
 }
+
 
 class GenericApp extends StatelessWidget {
   @override
@@ -18,16 +20,7 @@ class GenericApp extends StatelessWidget {
       home: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: Scaffold(
-          appBar: AppBar(
-            title: Image.asset(
-              "assets/images/github_transparent_logoicon.png",
-              fit: BoxFit.contain,
-              height: 72,
-            ),
-            centerTitle: true,
-            toolbarHeight: 88,
-            elevation: 0,
-          ),
+          appBar: CustomizableAppBar(),
           drawer: HomePageDrawer(),
           body: HomePageScreen(),
         ),
