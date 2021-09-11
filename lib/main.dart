@@ -9,7 +9,6 @@ void main() {
   runApp(GenericApp());
 }
 
-
 class GenericApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:generic_app/widgets/PasswordInput.dart';
 import 'package:generic_app/widgets/UserNameInput.dart';
+
+
+import 'package:http/http.dart' as http;
+
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({
@@ -68,4 +74,32 @@ class HomePageScreen extends StatelessWidget {
       ),
     );
   }
+
+  Future<htp.Response> testSubmit(String title) {
+    return http.post(
+      Uri.parse('http://localhost:3000/login'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'email': 'testmail@testmail.com',
+        'password': 'secret_password'
+      }),
+    );
+  }
+
+  Future<void> _submit() async {
+    // setState(() {
+    //   _isLoading = true;
+    // });
+      // Log user in
+      // await Provider.of<Auth>(context, listen: false).login(
+      //   _authData['email'],
+      //   _authData['password'],
+      // );
+    // setState(() {
+    //   _isLoading = false;
+    // });
+  }
+
 }
