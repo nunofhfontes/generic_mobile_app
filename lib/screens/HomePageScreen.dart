@@ -5,7 +5,6 @@ import 'package:flutter/rendering.dart';
 import 'package:generic_app/widgets/PasswordInput.dart';
 import 'package:generic_app/widgets/UserNameInput.dart';
 
-
 import 'package:http/http.dart' as http;
 
 
@@ -39,7 +38,10 @@ class HomePageScreen extends StatelessWidget {
                         horizontal: 40, vertical: 15),
                     textStyle: TextStyle(
                         fontSize: 20, fontWeight: FontWeight.bold)),
-                onPressed: () {},
+                onPressed: () {
+                  print("SUBMIT button pressed");
+                  this.testSubmit('just_a_title');
+                },
                 child: const Text('SIGN IN'),
               ),
             ),
@@ -75,18 +77,31 @@ class HomePageScreen extends StatelessWidget {
     );
   }
 
-  Future<htp.Response> testSubmit(String title) {
+  Future<void> testSubmit(String title) {
     return http.post(
-      Uri.parse('http://localhost:3000/login'),
+      Uri.parse('http://10.0.2.2:3000/auth/login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode(<String, String>{
         'email': 'testmail@testmail.com',
-        'password': 'secret_password'
+        'password': 'flutter_secret_password'
       }),
     );
   }
+
+  // Future<htp.Response> testSubmit(String title) {
+  //   return http.post(
+  //     Uri.parse('http://localhost:3000/login'),
+  //     headers: <String, String>{
+  //       'Content-Type': 'application/json; charset=UTF-8',
+  //     },
+  //     body: jsonEncode(<String, String>{
+  //       'email': 'testmail@testmail.com',
+  //       'password': 'secret_password'
+  //     }),
+  //   );
+  // }
 
   Future<void> _submit() async {
     // setState(() {
@@ -101,5 +116,27 @@ class HomePageScreen extends StatelessWidget {
     //   _isLoading = false;
     // });
   }
+
+  // Future<Album> createAlbum(String title) async {
+  //   final response = await http.post(
+  //     Uri.parse('https://jsonplaceholder.typicode.com/albums'),
+  //     headers: <String, String>{
+  //       'Content-Type': 'application/json; charset=UTF-8',
+  //     },
+  //     body: jsonEncode(<String, String>{
+  //       'title': title,
+  //     }),
+  //   );
+  //
+  //   if (response.statusCode == 201) {
+  //     // If the server did return a 201 CREATED response,
+  //     // then parse the JSON.
+  //     return Album.fromJson(jsonDecode(response.body));
+  //   } else {
+  //     // If the server did not return a 201 CREATED response,
+  //     // then throw an exception.
+  //     throw Exception('Failed to create album.');
+  //   }
+  // }
 
 }
