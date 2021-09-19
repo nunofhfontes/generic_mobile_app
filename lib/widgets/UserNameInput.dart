@@ -31,6 +31,9 @@ class UserNameInput extends StatelessWidget {
           ),
         ),
         // keyboardType: TextInputType.emailAddress,
+        onChanged: (value) {
+          print("USERNAME -> The value entered is : $value");
+        }
       ),
     );
   }

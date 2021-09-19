@@ -30,7 +30,9 @@ class PasswordInput extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
             )
         ),
-
+        onChanged: (value) {
+          print("PASSWORD -> The value entered is : $value");
+        }
       ),
     );
   }
