@@ -8,12 +8,36 @@ import 'package:generic_app/widgets/UserNameInput.dart';
 import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
+
+  const LoginPage({Key? key}) : super(key: key);
+
+  // LoginPage({Key key, this.title}) : super(key: key);
+  //
+  // final String title;
+
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+
   final _formKey = GlobalKey<FormState>();
+
+  String _userName = '';
+  String _password = '';
+
+  void setUserName(userNameStr) {
+    setState(() {
+      _userName = userNameStr;
+    });
+  }
+
+  void setPassword(passwordStr) {
+    setState(() {
+      _password = _password;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +52,9 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              UserNameInput(),
+              UserNameInput(
+                onChanged: setUserName
+              ),
               PasswordInput(),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10.0),

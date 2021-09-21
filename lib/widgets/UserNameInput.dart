@@ -4,7 +4,16 @@ import 'package:flutter/rendering.dart';
 class UserNameInput extends StatelessWidget {
   const UserNameInput({
     Key? key,
+    required void Function(userNameStr) ,
+    required this.onChanged
   }) : super(key: key);
+
+  final String userName;
+  final ValueChanged<String> onChanged;
+
+  void _handleOnChange(value) {
+    onChanged(value);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +40,10 @@ class UserNameInput extends StatelessWidget {
           ),
         ),
         // keyboardType: TextInputType.emailAddress,
-        onChanged: (value) {
-          print("USERNAME -> The value entered is : $value");
-        }
+        // onChanged: (value) {
+        //   print("USERNAME -> The value entered is : $value");
+        // }
+        onChanged: _handleOnChange,
       ),
     );
   }
