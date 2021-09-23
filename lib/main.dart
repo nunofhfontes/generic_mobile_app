@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:generic_app/screens/HomePageScreen.dart';
+import 'package:generic_app/screens/LoginPage.dart';
 import 'package:generic_app/widgets/CustomizableAppBar.dart';
 import 'package:generic_app/widgets/HomePageDrawer.dart';
 
@@ -21,7 +22,8 @@ class GenericApp extends StatelessWidget {
         child: Scaffold(
           appBar: CustomizableAppBar(),
           drawer: HomePageDrawer(),
-          body: HomePageScreen(),
+          // body: HomePageScreen(),
+          body: LoginPage(),
         ),
       ),
     );

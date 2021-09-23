@@ -31,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       _userName = userNameStr;
     });
+    print("On _setUserName method, the state is: " + _userName);
   }
 
   void _setPassword(String passwordStr) {
