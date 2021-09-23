@@ -24,7 +24,7 @@ class HomePageScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            UserNameInput(),
+            //UserNameInput(),
             PasswordInput(),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10.0),

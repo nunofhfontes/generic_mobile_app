@@ -27,13 +27,13 @@ class _LoginPageState extends State<LoginPage> {
   String _userName = '';
   String _password = '';
 
-  void setUserName(userNameStr) {
+  void _setUserName(String userNameStr) {
     setState(() {
       _userName = userNameStr;
     });
   }
 
-  void setPassword(passwordStr) {
+  void _setPassword(String passwordStr) {
     setState(() {
       _password = _password;
     });
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               UserNameInput(
-                onChanged: setUserName
+                onChanged: _setUserName
               ),
               PasswordInput(),
               Container(

@@ -4,14 +4,16 @@ import 'package:flutter/rendering.dart';
 class UserNameInput extends StatelessWidget {
   const UserNameInput({
     Key? key,
-    required void Function(userNameStr) ,
+    // required void Function(userNameStr) ,
+    this.userName = "",
     required this.onChanged
   }) : super(key: key);
 
   final String userName;
   final ValueChanged<String> onChanged;
 
-  void _handleOnChange(value) {
+  void _handleOnChange(String value) {
+    print("value _handleOnChange: " + value);
     onChanged(value);
   }
 
